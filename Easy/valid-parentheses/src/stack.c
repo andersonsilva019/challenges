@@ -9,6 +9,7 @@ struct node_t {
 
 bool isEmpty(Stack* top){
     if(top == NULL) return false;
+
     if(*top == NULL) return true;
     
     return false;
@@ -16,17 +17,22 @@ bool isEmpty(Stack* top){
 
 Stack* create_stack(){
     Stack* stack = (Stack*) malloc(sizeof(Stack));
+    
     if(stack != NULL) *stack = NULL;
+    
     return stack;
 }
 
 void destroy_stack(Stack* top){
     if(top != NULL){
+
         node_t* node;
 
         while(*top != NULL){
             node = *top;
+        
             *top = (*top)->next;
+        
             free(node);
         }
     }

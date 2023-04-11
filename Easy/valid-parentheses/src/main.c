@@ -10,7 +10,6 @@ bool isValid(Stack* stack, char* s){
 
         if(s[i] == '(' || s[i] == '[' || s[i] == '{'){
              push(stack, s[i]);
-            
         }else{
             if(*stack == NULL) return false;
 
@@ -32,7 +31,7 @@ bool isValid(Stack* stack, char* s){
 
 int main(){
 
-    char str[] = "(((((((())))))))";
+    char str[] = "(])";
 
     Stack* stack = create_stack();
 
