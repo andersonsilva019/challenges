@@ -31,7 +31,7 @@ bool isValid(Stack* stack, char* s){
 
 int main(){
 
-    char str[] = "(])";
+    char str[] = "((([])))";
 
     Stack* stack = create_stack();
 

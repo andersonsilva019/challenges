@@ -68,3 +68,41 @@ char pop(Stack* top){
 
     return c;
 }
+
+char* convert_stack_to_string(Stack* top, int size_of_string){
+    if(isEmpty(top)) return NULL;
+
+    char* str = (char*) malloc(size_of_string * sizeof(char) + 1);
+
+    int i = 0;
+
+    while(!isEmpty(top)){
+        str[i] = pop(top);
+        i++;
+    }
+
+    str[i] = '\0';
+
+    return str;
+}
+
+int sizeStack(Stack* top){
+    if(isEmpty(top)) return 0;
+
+    int size = 0;
+
+    Stack* stack = create_stack();
+
+    while(!isEmpty(top)){
+        push(stack, pop(top));
+        size++;
+    }
+
+    while(!isEmpty(stack)){
+        push(top, pop(stack));
+    }
+
+    destroy_stack(stack);
+
+    return size;
+}

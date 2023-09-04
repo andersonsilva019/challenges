@@ -17,4 +17,8 @@ char pop(Stack* top);
 
 bool isEmpty(Stack* top);
 
+int sizeStack(Stack* top);
+
+char* convert_stack_to_string(Stack* top, int size_of_string);
+
 #endif
